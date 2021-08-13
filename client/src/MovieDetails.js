@@ -26,8 +26,8 @@ function MovieDetails() {
 
     return (
         <div>
-        <div><h3 className="most-popular">Most popular</h3></div>
-        return <Movie key={movie.id} movie={movie}/>
+        <div><h3 className="most-popular">Move Details</h3></div>
+        <Movie key={movie.id} movie={movie}/>
     </div>     
     )
 }

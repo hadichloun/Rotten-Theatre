@@ -1,15 +1,15 @@
 import React from "react";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 
 function Movie({movie}) {
     
     const history = useHistory();
 
-    console.log(history);
+    console.log(`history: ${history}`);
     
-    function movieDetails() { 
-        history.push(`/movies/${movie.id}`)
+    function movieDetails() {
+       history.push(`/movies/${movie.id}`);
     }
 
     return (

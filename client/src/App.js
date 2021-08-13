@@ -3,10 +3,13 @@ import { BrowserRouter as Router, Route, Switch, Redirect,  BrowserRouter  } fro
 import './App.css';
 import MovieList from './MovieList';
 import MovieDetails from './MovieDetails';
+import Header from "./Header";
+
 
 function App() {
 
   const [movies, setMovies] = useState([])
+  const [currentUser, setCurrentUser] = useState(null)
 
   useEffect(() => {
   fetch("http://localhost:3001/movies")
@@ -18,12 +21,15 @@ function App() {
    }, [])
 
   return (
-    <div>
-      <MovieList movies={movies} />
-
-      <Router>
-        </Router>
+    <div> 
         <BrowserRouter>
+
+        <Header
+          movies={movies}
+        />
+        <br></br>
+        <br></br>
+        <br></br>
         <Switch>
           <Route exact path="/home">
             <MovieList movies={movies} />

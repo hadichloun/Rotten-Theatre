@@ -4,20 +4,31 @@ import './App.css';
 import MovieList from './MovieList';
 import MovieDetails from './MovieDetails';
 import Header from "./Header";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchMovies } from "./redux/actions/moviesAction";
+
 
 
 function App() {
 
-  const [movies, setMovies] = useState([])
+  //const [movies, setMovies] = useState([])
   const [currentUser, setCurrentUser] = useState(null)
 
+
+  const dispatch  = useDispatch()
+
+ 
+
+
+
   useEffect(() => {
-  fetch("http://localhost:3001/movies")
+    dispatch(fetchMovies())
+/*   fetch("http://localhost:3001/movies")
        .then(r => r.json())
        .then((data) => {
           console.log(data)
          setMovies(data)
-       })
+       }) */
    }, [])
 
   return (
@@ -25,14 +36,14 @@ function App() {
         <BrowserRouter>
 
         <Header
-          movies={movies}
+        
         />
         <br></br>
         <br></br>
         <br></br>
         <Switch>
           <Route exact path="/home">
-            <MovieList movies={movies} />
+            <MovieList />
           </Route>
           <Route exact path="/movies/:id">
             <MovieDetails />

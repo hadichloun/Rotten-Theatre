@@ -1,7 +1,13 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import Movie from "./Movie";
 
-function MovieList({ movies }) {
+function MovieList() {
+
+    const movies = useSelector(state => state.movies.movies)
+
+   console.log(movies, "<===movies from store")
+
     return (
         <div>
             <br></br>
@@ -24,7 +30,7 @@ function MovieList({ movies }) {
             <br></br>
             <br></br>
             <div className="cards">
-                {movies.map((movie) => {
+                {movies && movies.map((movie) => {
                     return <Movie key={movie.id} movie={movie} />
                 })}
             </div>

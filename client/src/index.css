@@ -11,12 +11,12 @@
 
 .title {
   text-align: center;
-  font-style: italic;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: serif;
+  /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
   margin: 0px;
   font-size: 5em;
   color: transparent;
-  -webkit-text-stroke: 2px rgb(216, 187, 26);
+  -webkit-text-stroke: 2px rgb(50, 20, 500)
 }
 
 

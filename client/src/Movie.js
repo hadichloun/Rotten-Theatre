@@ -4,9 +4,12 @@ import {useHistory} from "react-router-dom";
 
 function Movie({movie}) {
     
-    const history = useHistory()
+    const history = useHistory();
+
+    console.log(history);
+    
     function movieDetails() { 
-        history.push(`/movies/${movie.id}`) 
+        history.push(`/movies/${movie.id}`)
     }
 
     return (

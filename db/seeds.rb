@@ -51,3 +51,9 @@ movie17 = Movie.create(image_url: "https://m.media-amazon.com/images/I/516UEGWAz
 # user1.likes.count
 # movie1.likes.count
 
+movie1.reviews.create(user_id: user1.id, comment: 'its a great movie')
+movie1.reviews.create(user_id: user1.id, comment: 'its an amazing movie')
+movie1.reviews.create(user_id: user1.id, comment: 'its a great awesome moview')
+movie1.reviews.create(user_id: user1.id, comment: 'this movie sucks')
+movie1.reviews.create(user_id: user1.id, comment: 'not too bad')
+movie1.reviews.create(user_id: user1.id, comment: 'fell asleep')

@@ -6,6 +6,7 @@ import MovieDetails from './MovieDetails';
 import Header from "./Header";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMovies } from "./redux/actions/moviesAction";
+import Login from "./components/Login";
 
 
 

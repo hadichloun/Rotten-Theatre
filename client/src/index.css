@@ -38,10 +38,10 @@
   row-gap: 4;
 }
 
-/* .cards :hover {
+.cards :hover {
   transition: all 0.4s ease-in-out 0s;
   transform: scale(1.04);
-} */
+}
 
 
 .movie {

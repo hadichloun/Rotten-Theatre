@@ -6,7 +6,10 @@ import MovieDetails from './MovieDetails';
 import Header from "./Header";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMovies } from "./redux/actions/moviesAction";
-import Login from "./components/Login";
+import Navbar from "./Navbar";
+// import Login from "./components/Login";
+// import Signup from "./components/signup";
+// import { fetchMovies } from "./redux/actions/moviesAction";
 
 
 
@@ -33,9 +36,7 @@ function App() {
     <div> 
         <BrowserRouter>
 
-        <Header
-        
-        />
+       <Navbar />
         <br></br>
         <br></br>
         <br></br>

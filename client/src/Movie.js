@@ -65,8 +65,9 @@ function Movie({movie}) {
       }
 
     return (
-        <div className="card">
-            <div className="card-info">
+        <div className="movieCard">
+                <img className="movie-image" src={movie.image_url} alt={movie.name} onClick={movieDetails} />
+            {/* <div className="card-info">
                 <ul>
                     <p>Name: {movie.name}</p>
                     <p>Genre: {movie.genre}</p>
@@ -90,7 +91,7 @@ function Movie({movie}) {
                     </div>
                     </form>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

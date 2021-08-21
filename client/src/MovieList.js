@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import  Carousel from 'react-multi-carousel';
 import Movie from "./Movie";
+import './styles/MovieList.css'
 
 function MovieList() {
 
@@ -10,14 +11,15 @@ function MovieList() {
    console.log(movies, "<===movies from store")
 
     return (
-        <div>
+        <div className='movieList'>
     
+    <h2>All Movies</h2>
             <Carousel
   additionalTransfrom={0}
   arrows
   autoPlaySpeed={3000}
   centerMode={false}
-  className=""
+  className="carousel"
   containerClass="container-with-dots"
   dotListClass=""
   draggable
@@ -26,7 +28,7 @@ function MovieList() {
   itemClass=""
   keyBoardControl
   minimumTouchDrag={80}
-  renderButtonGroupOutside={false}
+  renderButtonGroupOutside={true}
   renderDotsOutside={false}
   responsive={{
     desktop: {
@@ -59,6 +61,8 @@ function MovieList() {
   slidesToSlide={1}
   swipeable
 >
+  
+
                 {movies && movies.map((movie) => {
                     return <Movie key={movie.id} movie={movie} />
                 })}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-
+import ReactPlayer from 'react-player';
 
 function Movie({movie}) {
     
@@ -72,6 +72,8 @@ function Movie({movie}) {
                     <p>Name: {movie.name}</p>
                     <p>Genre: {movie.genre}</p>
                     <p>Description: {movie.description}</p>
+
+                    <ReactPlayer url={movie.video_url} />
             
                     <p>Reviews..</p>
                     {

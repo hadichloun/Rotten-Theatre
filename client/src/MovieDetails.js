@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Movie from "./Movie";
+import SlimMovie from "./SlimMovie";
 
 
 function MovieDetails() {
@@ -26,9 +27,9 @@ function MovieDetails() {
 
     return (
         <div>
-        <div><h3 className="most-popular">Move Details</h3></div>
+        <div><h3 className="most-popular">Movie Details</h3></div>
         <Movie key={movie.id} movie={movie}/>
-    </div>     
+    </div>
     )
 }
 

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import  Carousel from 'react-multi-carousel';
 import Movie from "./Movie";
+import SlimMovie from "./SlimMovie";
 import './styles/MovieList.css'
 
 function MovieList() {
@@ -64,7 +65,7 @@ function MovieList() {
   
 
                 {movies && movies.map((movie) => {
-                    return <Movie key={movie.id} movie={movie} />
+                    return <SlimMovie key={movie.id} movie={movie} />
                 })}
             </Carousel>
         </div>

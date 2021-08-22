@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 
-function Movie({movie}) {
+function SlimMovie({movie}) {
     
     const history = useHistory();
 
@@ -67,33 +67,8 @@ function Movie({movie}) {
     return (
         <div className="movieCard">
                 <img className="movie-image" src={movie.image_url} alt={movie.name} onClick={movieDetails} />
-            { <div className="card-info">
-                <ul>
-                    <p>Name: {movie.name}</p>
-                    <p>Genre: {movie.genre}</p>
-                    <p>Description: {movie.description}</p>
-            
-                    <p>Reviews..</p>
-                    {
-                        reviews.map(review => <ul>{review.comment} <button onClick={(e) => handleDelete(e, review.id)} type="button">Delete Comment</button></ul>)
-                    }
-                </ul>
-
-                <div>
-                    <h3>Submit Your Review</h3>
-                    <form className="note-editor">
-                    <label htmlFor='text'>
-                        Comment:
-                        <textarea onChange={(e) => setComment(e.target.value)} value={comment} />
-                    </label>        
-                    <div className="button-row">            
-                        <button onClick={handleSubmit} type="button">Add Comment</button>
-                    </div>
-                    </form>
-                </div>
-            </div>}
         </div>
     )
 }
 
-export default Movie;
+export default SlimMovie;

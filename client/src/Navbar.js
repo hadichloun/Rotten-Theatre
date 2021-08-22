@@ -11,7 +11,7 @@ function Navbar({ currentUser, setCurrentUser }) {
     return (
 
         <nav>
-            <Link to='/' className="title">Rotten Theatre</Link>
+            <Link to='/home' className="title">Rotten Theatre</Link>
 
             <select className="select-css">
                 <option value="All">All</option>

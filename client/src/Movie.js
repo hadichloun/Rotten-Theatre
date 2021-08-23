@@ -80,6 +80,7 @@ function Movie({movie}) {
                     {
                         reviews.map(review => <ul>{review.comment} <button onClick={(e) => handleDelete(e, review.id)} type="button">Delete Comment</button></ul>)
                     }
+                   
                 </ul>
 
                 <div>

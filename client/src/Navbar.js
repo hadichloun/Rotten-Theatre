@@ -18,12 +18,6 @@ function Navbar({ currentUser, setCurrentUser }) {
                 <option value="Action">Action</option>
                 <option value="Animation">Animation</option>
                 <option value="Adventure">Adventure</option>
-                <option value="Drama">Drama</option>
-                <option value="Thriller">Thriller</option>
-                <option value="Documentary">Documentary</option>
-                <option value="Comedy">Comedy</option>
-                <option value="Fantasy">Fantasy</option>
-                <option value="Family Movies">Family Movies</option>
             </select>
 
             <div className='navButtons'>

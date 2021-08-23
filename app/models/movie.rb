@@ -3,4 +3,14 @@ class Movie < ApplicationRecord
 	has_many :watch_lists
 	has_many :likes 
     has_many :dislikes
+
+    MOVIE_TYPES = { 
+        'superhero' => 'Super Hero',
+        'horror' => 'Horror',
+        'comedy' => 'Comedy',
+        'drama' => 'Drama',
+        'cartoon' => 'Cartoon',
+    }
+
+    enum movie_type: MOVIE_TYPES
 end

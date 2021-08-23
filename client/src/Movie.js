@@ -70,6 +70,7 @@ function Movie({movie}) {
             { <div className="card-info">
                 <ul>
                     <p>Name: {movie.name}</p>
+                    <p>Type: {movie.movie_type}</p>
                     <p>Genre: {movie.genre}</p>
                     <p>Description: {movie.description}</p>
 

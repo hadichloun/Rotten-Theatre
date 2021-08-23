@@ -3,7 +3,12 @@ class MoviesController < ApplicationController
 
   # GET /movies
   def index
-    @movies = Movie.all
+    if params[:movie_type].present?
+      @movies = Movie.where(movie_type: params[:movie_type])
+    else
+      @movies = Movie.all
+    end
+   
 
     render json: @movies
   end

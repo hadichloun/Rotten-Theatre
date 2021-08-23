@@ -24,6 +24,14 @@
   color: white;
 }
 
+.carousel-item {
+  width: '200px';
+}
+
+.carousel-container {
+  width: 20px;
+ }
+
 .App-link {
   color: #61dafb;
 }

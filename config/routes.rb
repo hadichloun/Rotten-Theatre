@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   resources :watch_lists
   resources :movies
   resources :users
+
+  post "/login", to: "auth#login"
+  # signup route
+  post "/signup" => "auth#signup"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

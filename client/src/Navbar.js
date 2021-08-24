@@ -1,12 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaList } from 'react-icons/fa';
+import { useHistory } from "react-router-dom";
 import './styles/Navbar.css'
 
 
 
 function Navbar({ currentUser, setCurrentUser }) {
 
+    const history = useHistory()
+
+    function goTologinPage() {
+        history.push('/login')
+    }
+
+    function goToSignupPage() {
+        history.push('/signup')
+    }
+
+    function logout() {
+        setCurrentUser(null);
+        history.push('/home')
+    }
 
     return (
 
@@ -20,10 +35,9 @@ function Navbar({ currentUser, setCurrentUser }) {
                 <option value="Adventure">Adventure</option>
             </select>
 
-            <div className='navButtons'>
-                <Link to='/login'>Login</Link>
-                <Link to='/signup'>Register</Link>
-                <FaList />
+            <div className='navButtons'>    
+                {!currentUser ? <button className="button" onClick={goToSignupPage}>Register</button> : ""}
+                {!currentUser ? <button className="button" onClick={goTologinPage}>Login</button> : <button className="button" onClick={logout}>Logout</button>}
             </div>
 
 

@@ -4,7 +4,7 @@ import Movie from "./Movie";
 import SlimMovie from "./SlimMovie";
 
 
-function MovieDetails() {
+function MovieDetails({currentUser}) {
 
     const [movie, setMovie] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false)
@@ -28,7 +28,7 @@ function MovieDetails() {
     return (
         <div>
         <div><h3 className="most-popular">Movie Details</h3></div>
-        <Movie key={movie.id} movie={movie}/>
+        <Movie key={movie.id} movie={movie} currentUser={currentUser} />
     </div>
     )
 }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import ReactPlayer from 'react-player';
 
-function Movie({movie}) {
+function Movie({movie, currentUser}) {
     
     const history = useHistory();
 
@@ -76,25 +76,31 @@ function Movie({movie}) {
 
                     <ReactPlayer url={movie.video_url} />
             
-                    <p>Reviews..</p>
+                   { !currentUser && <p>Please login to write Reviews..</p> }
                     {
-                        reviews.map(review => <ul>{review.comment} <button onClick={(e) => handleDelete(e, review.id)} type="button">Delete Comment</button></ul>)
+                        reviews.map(review => 
+                        <ul>
+                            {review.comment} 
+                            {currentUser && <button onClick={(e) => handleDelete(e, review.id)} type="button">Delete Review</button> }
+                        </ul>)
                     }
                    
                 </ul>
 
-                <div>
-                    <h3>Submit Your Review</h3>
-                    <form className="note-editor">
-                    <label htmlFor='text'>
-                        Comment:
-                        <textarea onChange={(e) => setComment(e.target.value)} value={comment} />
-                    </label>        
-                    <div className="button-row">            
-                        <button onClick={handleSubmit} type="button">Add Comment</button>
+                { currentUser &&
+                    <div>
+                        <h3>Submit Your Review</h3>
+                        <form className="note-editor">
+                        <label htmlFor='text'>
+                            Comment:
+                            <textarea onChange={(e) => setComment(e.target.value)} value={comment} />
+                        </label>        
+                        <div className="button-row">            
+                            <button onClick={handleSubmit} type="button">Add Comment</button>
+                        </div>
+                        </form>
                     </div>
-                    </form>
-                </div>
+                }
             </div>}
         </div>
     )

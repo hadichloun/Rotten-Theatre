@@ -6,18 +6,13 @@ import MovieDetails from './MovieDetails';
 import Header from "./Header";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMovies } from "./redux/actions/moviesAction";
-import Navbar from "./Navbar";
-// import Login from "./components/Login";
-// import Signup from "./components/signup";
-// import { fetchMovies } from "./redux/actions/moviesAction";
-
-
+import Signup from "./Signup";
+import Login from "./Login";
 
 function App() {
 
   //const [movies, setMovies] = useState([])
   const [currentUser, setCurrentUser] = useState(null)
-
 
   const dispatch  = useDispatch()
 
@@ -36,7 +31,10 @@ function App() {
     <div> 
         <BrowserRouter>
 
-       <Navbar />
+       <Header
+          currentUser={currentUser}
+          setCurrentUser={setCurrentUser}
+        />
         <br></br>
         <br></br>
         <br></br>
@@ -45,7 +43,13 @@ function App() {
             <MovieList />
           </Route>
           <Route exact path="/movies/:id">
-            <MovieDetails />
+            <MovieDetails currentUser={currentUser} />
+          </Route>
+          <Route exact path="/signup">
+            <Signup setCurrentUser={setCurrentUser} currentUser={currentUser} />
+          </Route>
+          <Route exact path="/login">
+            <Login  setCurrentUser={setCurrentUser}/>
           </Route>
         </Switch>
       </BrowserRouter>

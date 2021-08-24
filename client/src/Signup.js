@@ -10,12 +10,28 @@ function  Signup({setCurrentUser, currentUser}) {
 
     function handleSubmit(e) {
         e.preventDefault()
+
+        const data = {   
+            username: username,
+            password: password
+        }
+
         fetch('http://localhost:3001/signup', {
             method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
           })
             .then((r) => r.json())
             .then(data => {
-              setCurrentUser(data)
+
+                if (data.error_message) {
+                    console.log(data.error_message);
+                }
+                else {
+                    setCurrentUser(data);
+                }
             });
            
         return (

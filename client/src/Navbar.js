@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { FaList } from 'react-icons/fa';
 import { useHistory } from "react-router-dom";
 import './styles/Navbar.css'
+import {RiMovie2Line} from "react-icons/ri";
+import {GiPopcorn} from "react-icons/gi";
 
 
 
@@ -26,10 +28,10 @@ function Navbar({ currentUser, setCurrentUser }) {
     return (
 
         <nav>
-            <Link to='/home' className="title">Rotten Theatre</Link>
+            <Link to='/home' className="title"> <GiPopcorn/> </Link> 
 
             <select className="select-css">
-                <option value="All">All</option>
+                <option value="All">Sort By</option>
                 <option value="Action">Highest Rated Movies</option>
                 <option value="Animation">Lowest Rated movies</option>
                 {/* <option value="Adventure">Newest Movies</option> */}

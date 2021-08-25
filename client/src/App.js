@@ -8,6 +8,7 @@ import { fetchMovies } from "./redux/actions/moviesAction";
 import Signup from "./Signup";
 import Login from "./Login";
 
+
 function App() {
 
   //const [movies, setMovies] = useState([])

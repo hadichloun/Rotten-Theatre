@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import './styles/MovieList.css'
 
 
 function SlimMovie({movie}) {
@@ -65,7 +66,8 @@ function SlimMovie({movie}) {
       }
 
     return (
-        <div className="movieCard">
+        <div className="slimMovie">
+
                 <img className="movie-image" src={movie.image_url} alt={movie.name} onClick={movieDetails} />
         </div>
     )

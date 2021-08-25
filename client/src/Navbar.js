@@ -30,9 +30,10 @@ function Navbar({ currentUser, setCurrentUser }) {
 
             <select className="select-css">
                 <option value="All">All</option>
-                <option value="Action">Action</option>
-                <option value="Animation">Animation</option>
-                <option value="Adventure">Adventure</option>
+                <option value="Action">Highest Rated Movies</option>
+                <option value="Animation">Lowest Rated movies</option>
+                {/* <option value="Adventure">Newest Movies</option> */}
+                {/* <option value="Adventure">Oldest Movies</option> */}
             </select>
 
             <div className='navButtons'>    

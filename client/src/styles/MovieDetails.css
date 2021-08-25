@@ -1,0 +1,47 @@
+.movieCard{
+    width: 60%;
+    background-color: #ffffff0a;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px auto;
+    color: white;
+    text-align: center;
+}
+
+.movie-card-image {
+    width: 370px;
+    height: 426px;
+    border-radius: 1mm;
+  }
+
+  .react-player{
+      margin: 20px auto
+  }
+
+  .movieCard form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+
+  .reviews{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff33;
+  }
+
+  .reviews ul{
+      display: flex;
+      justify-content: space-evenly;
+      list-style-type: none;
+  }
+
+  .delete{
+      color: red;
+      
+  }
+

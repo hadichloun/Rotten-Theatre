@@ -66,7 +66,8 @@ function Movie({movie, currentUser}) {
 
     return (
         <div className="movieCard">
-                <img className="movie-image" src={movie.image_url} alt={movie.name} onClick={movieDetails} />
+              <h2 className="most-popular">Theatre Room</h2>
+                <img className="movie-card-image" src={movie.image_url} alt={movie.name} onClick={movieDetails} />
             { <div className="card-info">
                 <ul>
                     <p>Name: {movie.name}</p>
@@ -74,16 +75,10 @@ function Movie({movie, currentUser}) {
                     <p>Genre: {movie.genre}</p>
                     <p>Description: {movie.description}</p>
 
-                    <ReactPlayer url={movie.video_url} />
+                    <ReactPlayer className='react-player' url={movie.video_url} />
             
                    { !currentUser && <p>Please login to write Reviews..</p> }
-                    {
-                        reviews.map(review => 
-                        <ul>
-                            {review.comment} 
-                            {currentUser && <button onClick={(e) => handleDelete(e, review.id)} type="button">Delete Review</button> }
-                        </ul>)
-                    }
+                   
                    
                 </ul>
 
@@ -91,16 +86,27 @@ function Movie({movie, currentUser}) {
                     <div>
                         <h3>Submit Your Review</h3>
                         <form className="note-editor">
-                        <label htmlFor='text'>
-                            Comment:
-                            <textarea onChange={(e) => setComment(e.target.value)} value={comment} />
-                        </label>        
+                            <div>
+                             
+                        <textarea placeholder='enter comment...' onChange={(e) => setComment(e.target.value)} value={comment} />
+                            </div>
+                            
                         <div className="button-row">            
                             <button onClick={handleSubmit} type="button">Add Comment</button>
                         </div>
                         </form>
                     </div>
                 }
+ <div className='reviews'>
+{
+                        reviews.map(review => 
+                        <ul>
+                            <li>{review.comment}  </li>
+                            {currentUser &&<li className='delete' onClick={(e) => handleDelete(e, review.id)} >x</li> }
+                        </ul>)
+
+                    }
+                      </div>
             </div>}
         </div>
     )

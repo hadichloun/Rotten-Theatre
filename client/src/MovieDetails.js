@@ -2,6 +2,7 @@ import { React, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Movie from "./Movie";
 import SlimMovie from "./SlimMovie";
+import './styles/MovieDetails.css'
 
 
 function MovieDetails({currentUser}) {
@@ -27,7 +28,7 @@ function MovieDetails({currentUser}) {
 
     return (
         <div>
-        <div><h3 className="most-popular">Movie Details</h3></div>
+    
         <Movie key={movie.id} movie={movie} currentUser={currentUser} />
     </div>
     )

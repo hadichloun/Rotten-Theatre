@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import store from './redux/store';
 import {Provider} from 'react-redux'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'react-multi-carousel/lib/styles.css'
+
 
 ReactDOM.render(
   <React.StrictMode>

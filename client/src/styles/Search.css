@@ -1,0 +1,14 @@
+.search-movies{
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap: 30px;
+}
+
+.slimMovie{
+    display: flex;
+    justify-content: center;
+}
+
+.search-error{
+    text-align: center;
+}

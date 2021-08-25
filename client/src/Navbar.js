@@ -5,10 +5,15 @@ import { useHistory } from "react-router-dom";
 import './styles/Navbar.css'
 import {RiMovie2Line} from "react-icons/ri";
 import {GiPopcorn} from "react-icons/gi";
+import { useDispatch } from "react-redux";
+import { searchMovies } from "./redux/actions/moviesAction";
 
 
 
 function Navbar({ currentUser, setCurrentUser }) {
+
+    const dispatch = useDispatch();
+
 
     const history = useHistory()
 
@@ -25,6 +30,10 @@ function Navbar({ currentUser, setCurrentUser }) {
         history.push('/')
     }
 
+    function handleChange (e) {
+          dispatch(searchMovies(e.target.value))
+    }
+
     return (
 
         <nav>
@@ -32,13 +41,9 @@ function Navbar({ currentUser, setCurrentUser }) {
            <Link to='/' className="nav-icon"> <GiPopcorn/> </Link> 
               
 
-            <select className="select-css">
-                <option value="All">Sort By</option>
-                <option value="Action">Highest Rated Movies</option>
-                <option value="Animation">Lowest Rated movies</option>
-                {/* <option value="Adventure">Newest Movies</option> */}
-                {/* <option value="Adventure">Oldest Movies</option> */}
-            </select>
+            <input type='text'  className="select-css" onChange={handleChange}/>
+              
+            
 
             <div className='navButtons'>    
                 {!currentUser ? <button className="button" onClick={goToSignupPage}>Register</button> : ""}

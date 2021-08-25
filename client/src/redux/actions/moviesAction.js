@@ -1,4 +1,4 @@
-import { POST_MOVIES } from "../types/movieTypes";
+import { POST_MOVIES, SEARCH_MOVIES } from "../types/movieTypes";
 
 
 export const fetchMovies = () => async(dispatch) => {
@@ -18,5 +18,12 @@ export const fetchMovies = () => async(dispatch) => {
            console.log(err)
     }
 
+}
+
+export const searchMovies = (value) => (dispatch) => {
+    dispatch({
+        type: SEARCH_MOVIES,
+        payload: value
+    })
 }
 

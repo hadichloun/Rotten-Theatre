@@ -1,10 +1,12 @@
-import { GET_MOVIES, POST_MOVIES } from "../types/movieTypes"
+import { GET_MOVIES, POST_MOVIES, SEARCH_MOVIES } from "../types/movieTypes"
 
 
 
 
 const initialState = {
-    movies: []
+    movies: [],
+    searchMovies: [],
+    search: ""
 }
 
 export default (state = initialState, action) => {
@@ -19,6 +21,17 @@ switch(action.type){
            ...state,
            movies: action.payload
        };
+
+       case SEARCH_MOVIES: 
+       return {
+           ...state,
+           search: action.payload,
+           searchMovies: state.movies.filter(movie =>{
+                const regex = new RegExp(`^${action.payload}`, 'gi')
+                return movie.name.match(regex)
+           })
+       };
+       
        default :
        return state
 }

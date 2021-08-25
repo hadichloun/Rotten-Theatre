@@ -64,6 +64,14 @@ body {
   color: #e41212;
 }
 
+.slick-next{
+  margin-right: 4rem ;
+}
+
+.slick-prev{
+  margin-left: 1.65rem;
+}
+
 .slick-next:before, .slick-prev:before {
   font-size: 60px;
   line-height: 1;

@@ -6,9 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import store from './redux/store';
 import {Provider} from 'react-redux'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ReactStars from "react-rating-stars-component";
+import { render } from "react-dom";
+// import React from "react";
 
 
 ReactDOM.render(
+
+
+  
   <React.StrictMode>
    <Provider store={store}>
    <App />

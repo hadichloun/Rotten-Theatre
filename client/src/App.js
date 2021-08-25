@@ -7,6 +7,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchMovies } from "./redux/actions/moviesAction";
 import Signup from "./Signup";
 import Login from "./Login";
+// import ReactStars from "react-rating-stars-component";
+// import { render } from "react-dom";
+
 
 
 function App() {

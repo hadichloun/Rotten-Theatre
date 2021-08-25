@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import ReactPlayer from 'react-player';
+import ReactStars from "react-rating-stars-component";
 
 function Movie({movie, currentUser}) {
     
@@ -8,10 +9,17 @@ function Movie({movie, currentUser}) {
 
     const [comment, setComment] = useState('');
     const [reviews, setReviews] = useState(movie.reviews);
+    const [count, setCount] = useState(5)
     
     function movieDetails() {
        history.push(`/movies/${movie.id}`);
     }
+
+    const ratingChanged = (newRating) => {
+        setCount(newRating)
+        console.log(newRating);
+      };
+       
 
     function handleSubmit(e){
 
@@ -108,6 +116,17 @@ function Movie({movie, currentUser}) {
                     }
                       </div>
             </div>}
+
+            <ReactStars
+    count={count}
+    onChange={ratingChanged}
+    size={24}
+    isHalf={false}
+    emptyIcon={<i className="far fa-star"></i>}
+    halfIcon={<i className="fa fa-star-half-alt"></i>}
+    fullIcon={<i className="fa fa-star"></i>}
+    activeColor="#ffd700"
+  />
         </div>
     )
 }

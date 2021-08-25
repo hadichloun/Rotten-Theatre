@@ -15,8 +15,6 @@ function MovieDetails({currentUser}) {
         fetch(`http://localhost:3001/movies/${params.id}`)
             .then(r => r.json())
             .then((movie) => {
-                console.log('movie...');
-                console.log(movie);
                 setMovie(movie)
                 setIsLoaded(true)
             })

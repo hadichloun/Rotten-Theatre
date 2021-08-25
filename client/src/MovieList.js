@@ -66,6 +66,7 @@ function MovieList() {
         <br />
 
         <h2>Super Hero</h2>
+        
         <Slider {...settings}>
           {movies && movies.map((movie) => {
             return movie.movie_type === 'superhero' && <SlimMovie key={movie.id} movie={movie} />

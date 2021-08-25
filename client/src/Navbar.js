@@ -22,13 +22,15 @@ function Navbar({ currentUser, setCurrentUser }) {
 
     function logout() {
         setCurrentUser(null);
-        history.push('/home')
+        history.push('/')
     }
 
     return (
 
         <nav>
-            <Link to='/home' className="title"> <GiPopcorn/> </Link> 
+        
+           <Link to='/' className="nav-icon"> <GiPopcorn/> </Link> 
+              
 
             <select className="select-css">
                 <option value="All">Sort By</option>

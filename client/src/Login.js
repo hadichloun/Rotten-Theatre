@@ -31,7 +31,7 @@ function Login({setCurrentUser}) {
                 }
             });
         return (
-            history.push('/home')
+            history.push('/')
         )
        
     }

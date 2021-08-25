@@ -8,6 +8,19 @@
     text-decoration: none;
   }
 
+  .nav-icon{
+    font-size: 50px;
+    color: red;
+    text-decoration: none;
+    position: absolute;
+    left: 2%;
+    top: 52px;
+  }
+
+  .nav-icon:hover{
+    color: red;
+  }
+
 .title:hover{
   color: red
 }
@@ -43,6 +56,7 @@
   background-size: .65em auto, 100%;
   background: transparent;
   color: red;
+  margin: 0 auto;
 }
 /* Hide arrow icon in IE browsers */
 .select-css::-ms-expand {
@@ -52,6 +66,9 @@
 .navButtons{
   display: flex;
   justify-content: flex-end;
+  position: absolute;
+  right: 2%;
+  
  
 }
 

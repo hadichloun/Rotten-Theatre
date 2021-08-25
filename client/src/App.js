@@ -42,7 +42,7 @@ function App() {
         <br></br>
         <br></br>
         <Switch>
-          <Route exact path="/home">
+          <Route exact path="/">
             <MovieList />
           </Route>
           <Route exact path="/movies/:id">

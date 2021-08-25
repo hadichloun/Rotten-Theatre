@@ -35,7 +35,7 @@ function  Signup({setCurrentUser, currentUser}) {
             });
            
         return (
-            history.push('/home')
+            history.push('/')
         )
        
     }

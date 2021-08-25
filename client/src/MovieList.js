@@ -16,7 +16,7 @@ function MovieList() {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 3,
+      slidesToShow: 6,
       slidesToScroll: 1,
     };
 
@@ -24,9 +24,7 @@ function MovieList() {
 
     return (
       <div className='movieList'>
-
       <h2>Cartoon</h2>
-       
       <Slider {...settings}>
           {movies && movies.map((movie) => {
             return movie.movie_type === 'cartoon' && <SlimMovie key={movie.id} movie={movie} />

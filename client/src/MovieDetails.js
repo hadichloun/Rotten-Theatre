@@ -23,7 +23,7 @@ function MovieDetails({currentUser}) {
     }, [params.id])
 
 
-   if (!isLoaded) return <h2 className="white-texts movie-info">Loading...</h2>;
+   if (!isLoaded) return <h2 className="white-texts movie-info">Film Rolling</h2>;
 
 
     return (

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import ReactPlayer from 'react-player';
 import ReactStars from "react-rating-stars-component";
+import StarRating from "./StarRating";
 
 function Movie({movie, currentUser}) {
     
@@ -9,15 +10,50 @@ function Movie({movie, currentUser}) {
 
     const [comment, setComment] = useState('');
     const [reviews, setReviews] = useState(movie.reviews);
-    const [count, setCount] = useState(5)
+    const [count, setCount] = useState(0);
+    const [rating, setRating] = useState(movie.rating);
+
+    // fetch(`http://localhost:3001/ratings?user_id=${currentUser?.id || 57}&movie_id=${movie.id}`)
+    // .then(r => r.json())
+    // .then((ratingObj) => {
+    //   console.log(ratingObj.rating);
+    //   setRating(ratingObj.rating);
+    //   //ratingChanged(rating.rating);
+    // })
+
+
+    console.log(`rating is: ${rating}`);
     
     function movieDetails() {
        history.push(`/movies/${movie.id}`);
     }
 
     const ratingChanged = (newRating) => {
-        setCount(newRating)
+        setRating(newRating);
         console.log(newRating);
+        console.log(JSON.stringify(movie));
+        console.log(`movie id: ${movie.id}`);
+        
+        const data = {
+          "rating": {
+              "rating": newRating,
+              "user_id": currentUser?.id || 57,
+              "movie_id": movie.id
+          }
+        }
+  
+      fetch("http://localhost:3001/ratings", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+        .then(response => response.json())
+        .then(rating => {
+          console.log(`${rating.rating} successfully saved!`)
+        })
+        
       };
        
 
@@ -28,7 +64,7 @@ function Movie({movie, currentUser}) {
         const data = {
             "review": {
                 "comment": comment,
-                "user_id": 19,
+                "user_id": currentUser.id,
                 "movie_id": movie.id
             }
         }
@@ -117,16 +153,7 @@ function Movie({movie, currentUser}) {
                       </div>
             </div>}
 
-            <ReactStars
-    count={count}
-    onChange={ratingChanged}
-    size={24}
-    isHalf={false}
-    emptyIcon={<i className="far fa-star"></i>}
-    halfIcon={<i className="fa fa-star-half-alt"></i>}
-    fullIcon={<i className="fa fa-star"></i>}
-    activeColor="#ffd700"
-  />
+            <StarRating totalStars={5} currentRating={rating} setRating={ratingChanged} />
         </div>
     )
 }

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :ratings
   resources :reviews
   resources :dislikes
   resources :likes

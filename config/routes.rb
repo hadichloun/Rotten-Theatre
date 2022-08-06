@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root to: 'fallback#index'
+  
   resources :ratings
   resources :reviews
   resources :dislikes

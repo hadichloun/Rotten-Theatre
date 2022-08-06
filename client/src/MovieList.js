@@ -10,9 +10,7 @@ function MovieList() {
 
     const {movies, search} = useSelector(state => state.movies)
 
-
-
-
+    console.log(`movies: ${JSON.stringify(movies)}`)
    
 
     var settings = {

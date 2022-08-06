@@ -68,10 +68,6 @@ movie53 = Movie.create(movie_type: 'superhero', image_url: "https://images-na.ss
 movie54 = Movie.create(movie_type: 'superhero', image_url: "http://4.bp.blogspot.com/_O3F0fH5AGXQ/RmdFLjgI2rI/AAAAAAAABOY/R4UjllnvQZ4/w1200-h630-p-k-no-nu/TC.png", video_url: "https://www.youtube.com/watch?v=YYtw_HHDX08", name: "Wonder Woman", description: "Before she was Wonder Woman (Gal Gadot), she was Diana, princess of the Amazons, trained to be an unconquerable warrior. Raised on a sheltered island paradise, Diana meets an American pilot (Chris Pine) who tells her about the massive conflict that's raging in the outside world.", genre: "Super Hero")
 
 
-
-
-
-
 movie1.reviews.create(user_id: user1.id, comment: 'its a great movie')
 movie1.reviews.create(user_id: user1.id, comment: 'its an amazing movie')
 movie1.reviews.create(user_id: user1.id, comment: 'its a great awesome moview')

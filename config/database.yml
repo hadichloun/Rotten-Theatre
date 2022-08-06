@@ -25,9 +25,8 @@ default: &default
 development:
   <<: *default
   database: rotten_theatre_development
-  username: <%= ENV["username"] %>
-  password: <%= ENV["password"] %>
-  
+  username: hadi
+  password: 7566
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -64,7 +63,7 @@ test:
   database: rotten_theatre_test
   username: <%= ENV["username"] %>
   password: <%= ENV["password"] %>
-  host: localhost 
+  host: localhost
   port: 5432
 
 # As with config/credentials.yml, you never want to store sensitive information,

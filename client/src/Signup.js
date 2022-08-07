@@ -8,6 +8,8 @@ function  Signup({setCurrentUser, currentUser}) {
     const [password, setPassword] = useState("")
     const history = useHistory()
 
+    const API_ENDPOINT = process.env.NODE_ENV == "development" ? "http://localhost:3001" : "https://rotten-theatre1.herokuapp.com";
+
     function handleSubmit(e) {
         e.preventDefault()
 
@@ -16,7 +18,7 @@ function  Signup({setCurrentUser, currentUser}) {
             password: password
         }
 
-        fetch('http://localhost:3001/signup', {
+        fetch(`${API_ENDPOINT}/signup`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
